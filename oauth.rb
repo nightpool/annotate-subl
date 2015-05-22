@@ -3,8 +3,6 @@
 client_secret = File.open('client-secret').read.strip
 
 require 'sinatra'
-require 'sinatra/json'
-require 'json'
 require 'rest-client'
 
 client_id = "ciUq7-YBs7OvIBqyEbX6CTMFwBzxXfC_0bMmMPsXfLWopNHyVm3ZfCTpyDtuSj6n"
