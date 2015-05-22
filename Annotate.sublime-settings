@@ -1,0 +1,6 @@
+
+{
+	"api-path" : "https://api.genius.com",
+	"client-id" : "ciUq7-YBs7OvIBqyEbX6CTMFwBzxXfC_0bMmMPsXfLWopNHyVm3ZfCTpyDtuSj6n",
+	"redirect-uri": "http://nightpool.me/annotate-subl-auth"
+}
