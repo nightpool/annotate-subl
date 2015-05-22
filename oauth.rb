@@ -2,6 +2,10 @@
 require 'sinatra'
 require 'rest-client'
 
+error do
+  'Sorry there was a nasty error - ' + env['sinatra.error'].message
+end
+
 helpers do 
     def payload(code)
         {
@@ -15,7 +19,8 @@ helpers do
     end
 
     def get_token(code)
-        RestClient.post "#{ENV['api_path']}/oauth/token", payload(code), :accept => :json
+        resp = RestClient.post "#{ENV['api_path']}/oauth/token", payload(code), :accept => :json
+        JSON.parse(resp)["access_token"]
     end
 
     def install
@@ -25,7 +30,39 @@ helpers do
             <head>
                 <title>Annotate Sublime Installation</title>
                 <style type="text/css">
-                    
+                    @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+                    body {
+                      max-width: 900px;
+                      margin: auto;
+                      text-align: center;
+                    }
+                    * {
+                        font-family: 'Open Sans', sans-serif;
+                    }
+                    h1 {
+                      font-size: 3em;
+                      font-weight: bold;
+                      letter-spacing: 7px;
+                      margin-bottom: 0;
+                    }
+                    p  {
+                      font-size: 1.8em;
+                      margin: .5em auto 1.5em auto;
+                      color: #a5a5a5;
+                    }
+                    textarea {
+                      font-size: 1.4em;
+                      width: 100%;
+                      background: #aaa;
+                      color: #505050;
+                      text-align: center;
+                      resize: none;
+                      cursor: text;
+                      padding: 1em;
+                      line-height: 0;
+                      vertical-align: middle;
+                      border: 1px solid black;
+                    }
                 </style>
             </head>
             <body>
