@@ -308,3 +308,44 @@ def parse_file(file_path):
 	"""
 	with open(file_path) as f:
 		return XmlPropertyListParser().parse(f)
+
+### Function from Schemr (https://github.com/benweier/Schemr)
+### Used with Permission
+
+def parse_scheme(self, scheme_path):
+		if int(sublime.version()) >= 3000:
+			try:
+				xml = sublime.load_resource(scheme_path)
+			except:
+				print('Error loading ' + scheme_path)
+				return (0, 0, 0)
+			try:
+				plist = parse_string(xml)
+			except (PropertyListParseError):
+				print('Error parsing ' + scheme_path)
+				return (0, 0, 0)
+		else:
+			xml = os.path.join(sublime.packages_path(), scheme_path.replace('Packages/', ''))
+			try:
+				plist = parse_file(xml)
+			except (PropertyListParseError):
+				print('Error parsing ' + scheme_path)
+				return (0, 0, 0)
+
+		try:
+			background_colour = plist['settings'][0]['settings']['background'].lstrip('#')
+		except (KeyError): # tmTheme is missing a background colour
+			return (0, 0, 0)
+
+		if len(background_colour) is 3:
+			# Shorthand value, e.g. #111
+			# Repeat the values for correct base 16 conversion
+			r, g, b = background_colour[:1] + background_colour[:1], background_colour[1:2] + background_colour[1:2], background_colour[2:] + background_colour[2:]
+		else:
+			# Full-length colour value, e.g. #111111 or #FFEEEEEE
+			# Here we assume the order of hex values is #AARRGGBB
+			# and so work backwards from the end of the string.
+			r, g, b = background_colour[-6:-4], background_colour[-4:-2], background_colour[-2:]
+
+		r, g, b = [int(n, 16) for n in (r, g, b)]
+		return (r, g, b)
