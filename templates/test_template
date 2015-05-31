@@ -1,0 +1,34 @@
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor [incididunt]() ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute [irure]() dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Curabitur sit amet ex at quam dignissim volutpat. Nullam ut porttitor sem. 
+Pellentesque egestas [lacinia feugiat. Morbi]() condimentum, risus eu consectetur
+lacinia, nulla odio sollicitudin libero, sodales maximus sem enim ut leo. Sed 
+eleifend nec nisl sed suscipit. Duis sed mollis diam. Sed mi diam, dignissim 
+ac cursus at, mollis quis eros. Nulla auctor hendrerit enim. Etiam finibus l
+orem arcu, nec ultricies libero laoreet et. Vestibulum ut consectetur ipsum.
+Donec ante mauris, sollicitudin quis sollicitudin nec, volutpat condimentum
+nisl
+
+Proin eu eleifend urna. Donec placerat justo non justo tempus porttitor. 
+Praesent sit amet ex mauris. [Aliquam]() [erat]() volutpat. Nullam quam risus, lacinia 
+et elit id, sodales congue sem. In aliquet tempor vulputate. Duis convallis 
+laoreet sem, id imperdiet orci molestie ac. Fusce pellentesque diam felis, 
+porta dignissim lacus semper in. Suspendisse eu ornare velit, non ornare urna.
+
+get '/auth' do
+    code = [params[:code]]()
+    erb install, locals: {token: get_token(code)}
+end
+
+def find_git(file_path):
+    git_path = None
+    for path, folders, _ in [utils.walk_up]()(os.path.dirname(file_path)):
+        if '.git' in folders:
+            git_path = [os.path.join(path, '.git')]()
+            break
+    return git_path

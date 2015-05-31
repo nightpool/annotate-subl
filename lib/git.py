@@ -1,9 +1,9 @@
 
 import os, os.path, re
 
-from annotate import utils
+from annotate.lib import utils
 
-def git_url(file_path):
+def git_path_url(file_path):
     git_path = find_git(file_path)
     if not git_path:
         return # TODO: probably could do something better here but whatever.
@@ -23,9 +23,9 @@ def git_url(file_path):
             break
     else:
         url = normalize_url(remote_hash[remote_order[0]])
-    
-    print(url)
-    return url
+
+    # print(url)
+    return git_path, url
 
 def find_git(file_path):
     git_path = None
