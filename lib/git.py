@@ -63,6 +63,7 @@ def read_config(config_path):
     return remote_hash, remote_order
 
 def normalize_url(url):
-    url = re.sub(r'//.*@', '//', url) # strip out a user (i.e. git@github.com)
+    url = re.sub(r'((//)?).*?@', r'\1', url) # strip out a user (i.e. git@github.com)
     url = re.sub(r'.*://', '', url) # strip out the protocol
+    url = url.replace(":","/")
     return "http://annotate-subl.herokuapp.com/ref/{}".format(url) # TODO: better to redirect to something like nightpool.me/??
