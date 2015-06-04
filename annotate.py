@@ -5,9 +5,9 @@ import requests
 from urllib.parse import quote as url_quote
 from itertools import chain
 
-from annotate.lib import git
-from annotate.lib.utils import debounce
-from annotate import views, lorem
+from .lib import git
+from .lib.utils import debounce
+from . import views, lorem
 
 files = {}
 
