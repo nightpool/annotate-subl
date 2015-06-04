@@ -77,8 +77,8 @@ class Referent(object):
             return None
         a, b = self.anchored_range.begin(), self.anchored_range.end()
         view = self.buffer.view
-        start_of_line = view.classify(a) == CLASS_LINE_START
-        end_of_line = view.classify(b) == CLASS_LINE_END
+        start_of_line = view.classify(a) == sublime.CLASS_LINE_START
+        end_of_line = view.classify(b) == sublime.CLASS_LINE_END
         before_region = (sublime.Region(view.find_by_class(a, False, sublime.CLASS_LINE_START), a) 
             if not start_of_line else sublime.Region(a,a))
         after_region = (sublime.Region(b, view.find_by_class(b, True, sublime.CLASS_LINE_END))
