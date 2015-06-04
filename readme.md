@@ -1,6 +1,8 @@
 
 # Annotate Sublime
 
+![screenshot of annotate sublime](http://i.imgur.com/K4fDs0i.png)
+
 Annotate Sublime requires [sublime package control](https://packagecontrol.io/installation) and [sublime 3](http://www.sublimetext.com/3). Install those first.
 
 To add this package to sublime, first select "`Package Control: Add Repository`", and then paste the link to this github repo.
