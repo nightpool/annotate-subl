@@ -2,7 +2,7 @@
 import sublime
 import string
 
-from annotate.lib import plist_parser as parser
+from .lib import plist_parser as parser
 
 annotation_view = string.Template("""
     <style>

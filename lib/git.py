@@ -1,7 +1,7 @@
 
 import os, os.path, re
 
-from annotate.lib import utils
+from ..lib import utils
 
 def git_path_url(file_path):
     git_path = find_git(file_path)
