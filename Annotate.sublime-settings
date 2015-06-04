@@ -2,5 +2,8 @@
 {
 	"api-path" : "https://api.genius.com",
 	"client-id" : "ciUq7-YBs7OvIBqyEbX6CTMFwBzxXfC_0bMmMPsXfLWopNHyVm3ZfCTpyDtuSj6n",
-	"redirect-uri": "http://annotate-subl.herokuapp.com/auth"
+	"redirect-uri": "http://annotate-subl.herokuapp.com/auth",
+
+	"show-popup" : true,
+	"debug" : false,
 }

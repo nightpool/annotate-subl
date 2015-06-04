@@ -66,4 +66,4 @@ def normalize_url(url):
     if url.startswith("git@github.com:"):
         url = url.replace("git@github.com:", "github.com/")
     url = re.sub(r'.*://', '', url) # strip out the protocol
-    return "genius-subl://{}".format(url) # TODO: better to redirect to something like nightpool.me/??
+    return "http://annotate-subl.herokuapp.com/ref/{}".format(url) # TODO: better to redirect to something like nightpool.me/??

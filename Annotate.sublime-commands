@@ -2,5 +2,7 @@
 	{"caption": "Genius: Log-in to Genius",
 	"command": "genius_authorize"},
 	{"caption": "Genius: debug!buffer_test",
-	"command": "buffer_test"}
+	"command": "buffer_test"},
+	{"caption": "Genius: Annotate!",
+	"command": "genius_annotate"}
 ]
