@@ -140,7 +140,7 @@ class Annotation(object):
         resp = api().post(api_url("/annotations"), {'text_format':'html'}, json=payload)
         print(resp.json())
         self.id = resp.json()['response']['annotation']['id']
-        self.html = resp.json()['response']['annotation']['body']['html']
+        #self.html = resp.json()['response']['annotation']['body']['html']
     @staticmethod
     def from_json(referent, json):
         html = json['body']['html']
